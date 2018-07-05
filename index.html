@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <script type="text/x-template" id="item-component">
+      <div class="item" :class="className" @click="select">
+        <div class="check" @click="item.done = !item.done" v-show="!selectMode"></div>
+        <div class="select" v-show="selectMode"></div>
+        <div class="text">{{item.text}}</div>
+      </div>
+    </script>
+    <div id="app">
+      <div id="header">
+        <div class="button" @click="toggleSelectMode">
+          {{ selectMode ? 'Done' : 'Edit' }}
+        </div>
+      </div>
+      <div id="main">
+        <input class="text-field" type="text" v-model="input" @change="add" placeholder="Add Todo">
+        <div class="list">
+          <item-component v-for="item in undone" :item="item" :select-mode="selectMode"></item-component>
+        </div>
+        <div class="toggle-button-wrap">
+          <div class="toggle-button" @click="viewAll = !viewAll">
+            {{ viewAll ? 'Hide completed Todo' : 'Show completed Todo' }}
+          </div>
+        </div>
+        <div class="list" v-if="viewAll">
+          <item-component v-for="item in done" :item="item" :select-mode="selectMode"></item-component>
+        </div>
+      </div>
+      <div id="footer" v-show="selectMode">
+        <div class="button" @click="editSelected" :class="editButtonClassName">Edit</div>
+        <div class="button" @click="doneSelected" :class="doneButtonClassName">Done</div>
+        <div class="button" @click="deleteSelected" :class="deleteButtonClassName">Delete</div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
+
