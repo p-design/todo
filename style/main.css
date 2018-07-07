@@ -62,7 +62,7 @@
 }
 
 #footer .button {
-  padding: 20px;
+  padding: 10px;
   color: #ffecdb7a;
   text-align: center;
 }
@@ -70,7 +70,6 @@
 #footer .button.active {
   padding: 20px;
   color: #FFECDB;
-  
 }
 
 #footer .button i{
