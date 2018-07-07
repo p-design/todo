@@ -1,10 +1,12 @@
 #app {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFC491;
 }
 
 #main {
-  margin: 60px 0;
-  padding: 20px;
+  padding: 80px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 #header {
@@ -14,8 +16,9 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: row-reverse;
-  background-color: #eee;
-  padding: 0 20px;
+  background-color: #FC9E4C;
+  color: #FFECDB;
+  /* padding: 0 20px; */
 }
 
 #header .button {
@@ -24,10 +27,16 @@
 
 .text-field {
   display: block;
-  padding: 20px;
+  padding: 16px;
   width: 100%;
-  background-color: #eee;
+  background-color: #F29849;
   border: none;
+  border-radius: 10px;
+  color: #FFECDB;
+}
+
+.text-field::placeholder{
+  color: #FFECDB;
 }
 
 .toggle-button-wrap {
@@ -36,8 +45,10 @@
 }
 
 .toggle-button {
-  background-color: #eee;
+  background-color: #F29849;
   padding: 10px 20px;
+  border-radius: 10px;
+  color: #FFECDB;
 }
 
 #footer {
@@ -46,18 +57,18 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 20px;
   display: flex;
   justify-content: space-around;
-  background: #eee;
+  background: #FC9E4C;
 }
 
 #footer .button {
   padding: 20px;
-  color: #bbb;
+  color: #ffecdb7a;
 }
 
 #footer .button.active {
   padding: 20px;
-  color: #000;
+  color: #FFECDB;
+  
 }

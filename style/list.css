@@ -4,33 +4,44 @@
 
 .list .item {
   display: flex;
-  padding: 20px;
+  padding: 16px;
+  margin: 5px;
+  background-color: #FFEDDE;
+  border-radius:10px;
 }
 
 .list .item .check {
-  height: 20px;
-  width: 20px;
-  background: #eee;
+  height: 15px;
+  width: 15px;
   margin-right: 20px;
+  border: solid #535F69 1px;
+  border-radius: 50%;
 }
 
 .list .item.done .check {
-  background: #e99;
+  background: #E6842D;
+  border: none;
 }
 
 .list .item .select {
-  height: 20px;
-  width: 20px;
-  background: #eee;
+  height: 15px;
+  width: 15px;
   margin-right: 20px;
+  border-radius: 50%;
+  border: solid #535F69 1px;
+}
+
+.list .item .text{
+  color: #535F69; 
 }
 
 .list .item.selected {
-  background-color: #eee;
+  background-color: #F7E1AD;
 }
 
 .list .item.selected .select {
-  background: #333;
+  background-color: #F7BA2D;
+  border:none;
 }
 
 .list .item.done .text {
