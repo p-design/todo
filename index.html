@@ -3,13 +3,16 @@
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <script type="text/x-template" id="item-component">
       <div class="item" :class="className" @click="select">
-        <div class="check" @click="item.done = !item.done" v-show="!selectMode"></div>
+        <div class="check" @click="item.done = !item.done" v-show="!selectMode">
+            <i class="fas fa-check" v-show="item.done"></i>
+        </div>
         <div class="select" v-show="selectMode"></div>
         <div class="text">{{item.text}}</div>
       </div>
@@ -35,9 +38,18 @@
         </div>
       </div>
       <div id="footer" v-show="selectMode">
-        <div class="button" @click="editSelected" :class="editButtonClassName">Edit</div>
-        <div class="button" @click="doneSelected" :class="doneButtonClassName">Complete</div>
-        <div class="button" @click="deleteSelected" :class="deleteButtonClassName">Delete</div>
+        <div class="button" @click="editSelected" :class="editButtonClassName">
+          <i class="fas fa-pencil-alt"></i>
+          <div class="label">Edit</div>
+        </div>
+        <div class="button" @click="doneSelected" :class="doneButtonClassName">
+          <i class="fas fa-check"></i>
+          <div class="label">Complete</div>
+        </div>
+        <div class="button" @click="deleteSelected" :class="deleteButtonClassName">
+          <i class="fas fa-trash-alt"></i>
+          <div class="label">Delete</div>
+        </div>
       </div>
     </div>
     <script src="index.js"></script>

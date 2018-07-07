@@ -21,6 +21,14 @@
 .list .item.done .check {
   background: #E6842D;
   border: none;
+  text-align: center;
+}
+
+.list .item.done .check i{
+  font-size:10px;
+  color:#FFEDDE;
+  line-height: 15px;
+  height: 15px;
 }
 
 .list .item .select {
