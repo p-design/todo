@@ -84,8 +84,11 @@ const vm = new Vue({
     }
   },
   watch: {
-    todos(value) {
-      localStorage.setItem('data', JSON.stringify(value))
+    todos: {
+      handler(value) {
+        localStorage.setItem('data', JSON.stringify(value))
+      },
+      deep: true
     }
   }
 })
