@@ -71,7 +71,7 @@
       <div id="main">
         <input class="text-field" type="text" v-model="input" @change="add" placeholder="Add Todo">
         <div class="list">
-          <item-component v-for="item in undone" :item="item" :select-mode="selectMode"></item-component>
+          <item-component v-for="item in undone" :key="item.id" :item="item" :select-mode="selectMode"></item-component>
         </div>
         <div class="toggle-button-wrap">
           <div class="toggle-button" @click="viewAll = !viewAll">
@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="list" v-if="viewAll">
-          <item-component v-for="item in done" :item="item" :select-mode="selectMode"></item-component>
+          <item-component v-for="item in done" :key="item.id" :item="item" :select-mode="selectMode"></item-component>
         </div>
       </div>
       <div id="footer" v-show="selectMode">

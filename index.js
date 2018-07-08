@@ -49,12 +49,16 @@ const vm = new Vue({
   methods: {
     add() {
       if (this.input === '') return
-      this.todos.push({
-        text: this.input,
-        selected: false,
-        done: false
-      })
+      this.append(this.input)
       this.input = ''
+    },
+    append(text) {
+      this.todos.push({
+        text: text,
+        selected: false,
+        done: false,
+        id: Math.random().toString(36).slice(-8)
+      })
     },
     deselectAll() {
       this.selected.forEach(item => item.selected = false)
@@ -98,21 +102,5 @@ if (stored) {
   const data = JSON.parse(stored)
   vm.todos = data
 } else {
-  vm.todos = [
-    {
-      text: '買い物する',
-      done: false,
-      selected: false
-    },
-    {
-      text: '誰かと会う',
-      done: false,
-      selected: false
-    },
-    {
-      text: '宿題する',
-      done: false,
-      selected: false
-    }
-  ]
+  ['買い物する', '誰かと会う', '宿題する'].forEach(v => vm.append(v))
 }
