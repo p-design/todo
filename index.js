@@ -53,7 +53,7 @@ const vm = new Vue({
       this.input = ''
     },
     append(text) {
-      this.todos.push({
+      this.todos.unshift({
         text: text,
         selected: false,
         done: false,
